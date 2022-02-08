@@ -1,11 +1,12 @@
 # ydiff
+diff file1 and file2 after trim/sort/uniq
 
-download
+**download**
 ```bash
 go get github.com/afwu/ydiff
 ```
 
-usage
+**usage**
 ```bash
 $ ydiff -h
 what file1 is uniq to file2:            cat file1 | ydiff - file2
