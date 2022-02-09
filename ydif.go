@@ -10,7 +10,8 @@ import (
 )
 
 func print_help()  {
-	println("what file1 is uniq to file2:\t\tcat file1 | ydiff - file2")
+	println("what file1 is uniq to file2:\t\tcat file1 | ydiff file2")
+	println("what file2 is uniq to file1:\t\tcat file1 | ydiff file2 -")
 	println("what file1 is uniq to file2:\t\tydiff 1 file1 file2")
 	println("what file2 is uniq to file1:\t\tydiff 2 file1 file2")
 	println("intersect of file1 and file2:\t\tydiff 3 file1 file2")
@@ -59,7 +60,11 @@ func sorted_uniq_filecontent(filename string) []string {
 
 func ydiff()  {
 	//print help and exit if no 2/3 args passed in
-	if len(os.Args)!=4 && len(os.Args)!=3{
+	if len(os.Args)!=4 && len(os.Args)!=3 && len(os.Args)!=2 {
+		print_help()
+	}
+
+	if  len(os.Args)==2 && ( os.Args[1]=="-h" || os.Args[1]=="--help"){
 		print_help()
 	}
 
@@ -67,7 +72,11 @@ func ydiff()  {
 	mode:="1"
 	file1:=""
 	file2:=""
-	if len(os.Args)==3{
+	if len(os.Args)==2{
+		mode="1"
+		file1="-"
+		file2=os.Args[1]
+	}else if len(os.Args)==3{
 		mode="1"
 		file1=os.Args[1]
 		file2=os.Args[2]
