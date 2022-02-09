@@ -10,12 +10,12 @@ import (
 )
 
 func print_help()  {
-	println("what file1 is uniq to file2:\t\tcat file1 | ydiff file2")
-	println("what file2 is uniq to file1:\t\tcat file1 | ydiff file2 -")
-	println("what file1 is uniq to file2:\t\tydiff 1 file1 file2")
-	println("what file2 is uniq to file1:\t\tydiff 2 file1 file2")
-	println("intersect of file1 and file2:\t\tydiff 3 file1 file2")
-	println("union of file1 and file2:\t\tydiff 4 file1 file2")
+	println("what file1 is uniq to file2:\t\tcat file1 | ydif file2")
+	println("what file2 is uniq to file1:\t\tcat file1 | ydif file2 -")
+	println("what file1 is uniq to file2:\t\tydif 1 file1 file2")
+	println("what file2 is uniq to file1:\t\tydif 2 file1 file2")
+	println("intersect of file1 and file2:\t\tydif 3 file1 file2")
+	println("union of file1 and file2:\t\tydif 4 file1 file2")
 	os.Exit(1)
 }
 
